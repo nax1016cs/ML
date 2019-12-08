@@ -106,16 +106,16 @@ for i in range(len(t1x)):
 	predict2 = sigmoid(weight_entropy, t2x[i], t2y[i])
 	if(predict1 < 0.5):
 		confusion_matrix[0] +=1
-		# plt.scatter(t1x[i], t1y[i], c="red")
+		plt.scatter(t1x[i], t1y[i], c="red")
 	else:
 		confusion_matrix[1] +=1
-		# plt.scatter(t1x[i], t1y[i], c="blue")
+		plt.scatter(t1x[i], t1y[i], c="blue")
 	if(predict2 > 0.5):
 		confusion_matrix[3] +=1
-		# plt.scatter(t2x[i], t2y[i], c="blue")
+		plt.scatter(t2x[i], t2y[i], c="blue")
 	else:
 		confusion_matrix[2] +=1
-		# plt.scatter(t2x[i], t2y[i], c="red")
+		plt.scatter(t2x[i], t2y[i], c="red")
 
 print("Cross entropy")
 print("-----------------------")
@@ -133,11 +133,11 @@ print("-----------------------")
 
 
 # data2 
-# a1 = np.linspace(-6, 6, 100)
-# a2 = ( (-weight[0] * a1) - weight[2]) / weight[1]
-# plt.ylim(ymin=-5, ymax=10)
-# plt.plot(a1, a2)
-# plt.show()
+a1 = np.linspace(-6, 6, 100)
+a2 = ( (-weight_entropy[0] * a1) - weight_entropy[2]) / weight_entropy[1]
+plt.ylim(ymin=-5, ymax=10)
+plt.plot(a1, a2)
+plt.show()
 
 # data1 
 # a1 = np.linspace(-6, 15, 100)
